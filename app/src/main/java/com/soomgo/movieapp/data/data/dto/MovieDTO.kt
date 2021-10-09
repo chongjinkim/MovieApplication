@@ -1,21 +1,15 @@
-package com.soomgo.movieapp.domain.repository.model
+package com.soomgo.movieapp.data.data.dto
 
 import android.os.Parcelable
-import androidx.recyclerview.widget.DiffUtil
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import com.soomgo.movieapp.data.data.dto.Genre
 import kotlinx.android.parcel.Parcelize
 
-
 @Parcelize
-@Entity
-data class Movie(
-    @PrimaryKey val id: Int,
+data class MovieDTO(
     val adult: Boolean,
     val backdrop_path: String,
     val budget: Int,
     val homepage: String,
+    val id: Int,
     val imdb_id: String,
     val original_language: String,
     val original_title: String,
@@ -31,12 +25,4 @@ data class Movie(
     val video: Boolean,
     val vote_average: Double,
     val vote_count: Int
-) : Parcelable {
-
-    val DiffUtil = object : DiffUtil.ItemCallback<Movie>(){
-        override fun areItemsTheSame(oldItem: Movie, newItem: Movie) = oldItem == newItem
-
-        override fun areContentsTheSame(oldItem: Movie, newItem: Movie) = oldItem == newItem
-
-    }
-}
+) : Parcelable
