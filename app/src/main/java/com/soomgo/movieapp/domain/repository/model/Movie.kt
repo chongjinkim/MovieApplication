@@ -33,10 +33,14 @@ data class Movie(
     val vote_count: Int
 ) : Parcelable {
 
-    val DiffUtil = object : DiffUtil.ItemCallback<Movie>(){
-        override fun areItemsTheSame(oldItem: Movie, newItem: Movie) = oldItem == newItem
+    companion object{
 
-        override fun areContentsTheSame(oldItem: Movie, newItem: Movie) = oldItem == newItem
+       val DiffUtil = object : DiffUtil.ItemCallback<Movie>(){
+            override fun areItemsTheSame(oldItem: Movie, newItem: Movie) = oldItem == newItem
 
+            override fun areContentsTheSame(oldItem: Movie, newItem: Movie) = oldItem == newItem
+
+        }
     }
+
 }
