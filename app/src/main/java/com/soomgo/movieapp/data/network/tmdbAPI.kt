@@ -1,8 +1,8 @@
-package com.soomgo.movieapp.data.data.network
+package com.soomgo.movieapp.data.network
 
-import com.soomgo.movieapp.data.data.dto.DetailResponse
-import com.soomgo.movieapp.data.data.dto.MovieResponse
-import com.soomgo.movieapp.data.data.dto.UpComingResponse
+import com.soomgo.movieapp.data.dto.DetailResponse
+import com.soomgo.movieapp.data.dto.MovieResponse
+import com.soomgo.movieapp.data.dto.UpComingResponse
 import retrofit2.http.GET
 
 interface tmdbAPI {

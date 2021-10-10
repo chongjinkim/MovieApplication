@@ -1,6 +1,5 @@
-package com.soomgo.movieapp.data.data.network
+package com.soomgo.movieapp.data.network
 
-import android.os.Build
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
 import org.koin.android.compat.BuildConfig

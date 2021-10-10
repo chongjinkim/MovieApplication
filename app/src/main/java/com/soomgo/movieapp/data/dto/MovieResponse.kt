@@ -1,4 +1,4 @@
-package com.soomgo.movieapp.data.data.dto
+package com.soomgo.movieapp.data.dto
 
 
 

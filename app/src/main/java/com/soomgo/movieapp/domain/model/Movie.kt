@@ -1,10 +1,9 @@
-package com.soomgo.movieapp.domain.repository.model
+package com.soomgo.movieapp.domain.model
 
 import android.os.Parcelable
 import androidx.recyclerview.widget.DiffUtil
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.soomgo.movieapp.data.data.dto.Genre
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

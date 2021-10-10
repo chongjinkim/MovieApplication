@@ -1,8 +1,8 @@
-package com.soomgo.movieapp.data.data.local
+package com.soomgo.movieapp.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.soomgo.movieapp.domain.repository.model.Movie
+import com.soomgo.movieapp.domain.model.Movie
 
 @Database(
     entities = [Movie::class],

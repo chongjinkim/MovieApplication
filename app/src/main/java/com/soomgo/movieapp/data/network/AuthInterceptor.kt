@@ -1,4 +1,4 @@
-package com.soomgo.movieapp.data.data.network
+package com.soomgo.movieapp.data.network
 
 import okhttp3.Interceptor
 import okhttp3.Response

@@ -1,4 +1,4 @@
-package com.soomgo.movieapp.data.data.network
+package com.soomgo.movieapp.data.network
 
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonParser

@@ -1,9 +1,9 @@
-package com.soomgo.movieapp.domain.repository.repository
+package com.soomgo.movieapp.domain.repository
 
-import com.soomgo.movieapp.data.data.dto.DetailResponse
-import com.soomgo.movieapp.data.data.dto.MovieResponse
-import com.soomgo.movieapp.data.data.dto.UpComingResponse
-import com.soomgo.movieapp.domain.repository.model.Movie
+import com.soomgo.movieapp.data.dto.DetailResponse
+import com.soomgo.movieapp.data.dto.MovieResponse
+import com.soomgo.movieapp.data.dto.UpComingResponse
+import com.soomgo.movieapp.domain.model.Movie
 import kotlinx.coroutines.flow.Flow
 
 interface MovieRepository {

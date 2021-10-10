@@ -1,7 +1,7 @@
-package com.soomgo.movieapp.data.data.local
+package com.soomgo.movieapp.data.local
 
 import androidx.room.*
-import com.soomgo.movieapp.domain.repository.model.Movie
+import com.soomgo.movieapp.domain.model.Movie
 import kotlinx.coroutines.flow.Flow
 
 @Dao

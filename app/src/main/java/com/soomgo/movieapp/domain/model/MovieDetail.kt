@@ -1,9 +1,9 @@
-package com.soomgo.movieapp.domain.repository.model
+package com.soomgo.movieapp.domain.model
 
-import com.soomgo.movieapp.data.data.dto.Genre
-import com.soomgo.movieapp.data.data.dto.ProductionCompany
-import com.soomgo.movieapp.data.data.dto.ProductionCountry
-import com.soomgo.movieapp.data.data.dto.SpokenLanguage
+import com.soomgo.movieapp.data.dto.Genre
+import com.soomgo.movieapp.data.dto.ProductionCompany
+import com.soomgo.movieapp.data.dto.ProductionCountry
+import com.soomgo.movieapp.data.dto.SpokenLanguage
 
 data class MovieDetail(
     val adult: Boolean,

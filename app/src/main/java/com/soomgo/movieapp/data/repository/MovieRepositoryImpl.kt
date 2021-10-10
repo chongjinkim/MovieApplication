@@ -1,12 +1,12 @@
-package com.soomgo.movieapp.data.data.repository
+package com.soomgo.movieapp.data.repository
 
-import com.soomgo.movieapp.data.data.dto.DetailResponse
-import com.soomgo.movieapp.data.data.dto.MovieResponse
-import com.soomgo.movieapp.data.data.dto.UpComingResponse
-import com.soomgo.movieapp.data.data.local.MovieDAO
-import com.soomgo.movieapp.data.data.network.Client
-import com.soomgo.movieapp.domain.repository.model.Movie
-import com.soomgo.movieapp.domain.repository.repository.MovieRepository
+import com.soomgo.movieapp.data.dto.DetailResponse
+import com.soomgo.movieapp.data.dto.MovieResponse
+import com.soomgo.movieapp.data.dto.UpComingResponse
+import com.soomgo.movieapp.data.local.MovieDAO
+import com.soomgo.movieapp.data.network.Client
+import com.soomgo.movieapp.domain.model.Movie
+import com.soomgo.movieapp.domain.repository.MovieRepository
 import kotlinx.coroutines.flow.Flow
 
 class MovieRepositoryImpl(val client : Client, val dao : MovieDAO) : MovieRepository {
