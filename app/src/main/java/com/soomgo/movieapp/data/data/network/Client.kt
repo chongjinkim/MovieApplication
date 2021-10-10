@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit
 class Client(private val gSon : Gson)  {
 
     val client : Retrofit = createClient()
+    val TmdbAPI : tmdbAPI = createClient(USER_BASE_URL).create(tmdbAPI::class.java)
 
 
     private val httpLogLevel
