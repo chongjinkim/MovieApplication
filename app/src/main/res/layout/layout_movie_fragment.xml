@@ -1,13 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="movie"
+            type="com.soomgo.movieapp.domain.model.Movie" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="150dp"
+        android:layout_height="270dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/thumbNail"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:adjustViewBounds="true"
+            android:padding="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:SetImageUrl="@{movie.poster_path}"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:maxLines="2"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/thumbNail"
+            app:layout_constraintTop_toBottomOf="@id/thumbNail"
+            app:layout_constraintBottom_toTopOf="@id/releaseDate"
+            android:layout_marginTop="5dp"
+            android:text="@{movie.title}"
+            tools:text="TITLE" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/releaseDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="@id/thumbNail"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@{movie.release_date}"
+            tools:text="Release date" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/voteAverage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:formatNumber="@{movie.vote_average}"
+            android:layout_marginEnd="10dp"
+            tools:text="vote" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

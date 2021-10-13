@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -16,6 +18,65 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/detailImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:SetImageUrl="@{movieDetail.poster_path}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/detailImage"
+            android:layout_margin="10dp"
+            android:text="title"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/runtimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="running Time"
+            app:layout_constraintTop_toBottomOf="@id/titleText"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="10dp"
+            android:textSize="15sp"
+            android:setRunningTime="@{movieDetail.runtime}"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleOverViewText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/runtimeText"
+            android:text="Overview"
+            android:layout_margin="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/overViewText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{movieDetail.overview}"
+            tools:text="Shang-Chi must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization."
+            app:layout_constraintTop_toBottomOf="@id/titleOverViewText"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/startImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/titleText"
+            app:layout_constraintBottom_toBottomOf="@id/titleText"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="10dp"
+            android:setFavoirteMovie="@{isFavorite}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
