@@ -42,6 +42,19 @@ class DetailViewModel(private val detailMovieUseCase: DetailMovieUseCase,
           }
         }
     }
+
+    fun updateMovie(movie : Movie){
+        viewModelScope.launch {
+            if(_movieFavorite.value == false){
+                insertMovieUseCase.invoke(movie)
+                _movieFavorite.value = true
+            } else {
+                deleteMovieUseCase(movie)
+                _movieFavorite.value = false
+            }
+        }
+    }
+
 }
 
 

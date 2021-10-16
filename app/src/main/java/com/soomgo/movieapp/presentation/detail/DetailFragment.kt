@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.library.baseAdapters.BR
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import com.soomgo.movieapp.common.KEY_DETAIL
 import com.soomgo.movieapp.databinding.LayoutDetailFragmentBinding
 import com.soomgo.movieapp.domain.model.Movie
+import kotlinx.coroutines.launch
 
 class DetailFragment : Fragment(){
 
@@ -28,5 +32,31 @@ class DetailFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initView()
+        observe()
+    }
+
+    private fun initView(){
+        arguments?.getParcelable<Movie>(KEY_DETAIL)?.let {
+            movie = it
+            viewModel.fetchDetail(movie)
+        }
+
+        binding.startImage.setOnClickListener {
+            viewLifecycleOwner.lifecycleScope.launch {
+                viewModel.updateMovie(movie)
+            }
+        }
+    }
+
+    private fun observe(){
+        viewModel.movieDetail.observe(viewLifecycleOwner){
+            binding.setVariable(BR.movieDetail, it)
+            binding.executePendingBindings()
+        }
+
+        viewModel.moiveFavorite.observe(viewLifecycleOwner){
+            binding.isFavorite = it
+        }
     }
 }
