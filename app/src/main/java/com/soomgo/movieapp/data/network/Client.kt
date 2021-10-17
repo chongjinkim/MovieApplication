@@ -20,10 +20,11 @@ class Client(private val gSon : Gson)  {
 
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(HttpCustomLoggingInterceptor().apply {level = httpLogLevel})
+            .addInterceptor(AuthInterceptor())
             .connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
             .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)
             .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
-            .retryOnConnectionFailure(false)
+            .retryOnConnectionFailure(true)
             .build()
 
         return Retrofit.Builder()

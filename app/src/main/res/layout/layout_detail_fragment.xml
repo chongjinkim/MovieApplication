@@ -76,7 +76,7 @@
             app:layout_constraintBottom_toBottomOf="@id/titleText"
             app:layout_constraintEnd_toEndOf="parent"
             android:padding="10dp"
-            android:setFavoirteMovie="@{isFavorite}"/>
+            android:setFavoriteMovie="@{isFavorite}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

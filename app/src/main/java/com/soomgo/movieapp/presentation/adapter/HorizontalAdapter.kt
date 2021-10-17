@@ -7,7 +7,7 @@ import com.soomgo.movieapp.databinding.LayoutHorizontalRecyclerviewBinding
 
 
 
-class HorizontalAdapter(private val subAdapter : MovieListAdapter) : RecyclerView.Adapter<HorizontalAdapter.HorizontalViewHolder>(){
+class HorizontalAdapter(private val subAdapter : RecyclerView.Adapter<MovieListAdapter.MovieListViewHolder>) : RecyclerView.Adapter<HorizontalAdapter.HorizontalViewHolder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HorizontalViewHolder {
@@ -19,7 +19,7 @@ class HorizontalAdapter(private val subAdapter : MovieListAdapter) : RecyclerVie
 
     override fun onBindViewHolder(holder: HorizontalViewHolder, position: Int) {
         holder.binding.apply {
-            horizontalRecyclerView.adapter = subAdapter
+            horizontalRecyclerView.adapter = this@HorizontalAdapter.subAdapter
         }
     }
 

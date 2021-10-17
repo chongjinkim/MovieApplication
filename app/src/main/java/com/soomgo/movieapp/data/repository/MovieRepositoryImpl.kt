@@ -10,35 +10,21 @@ import com.soomgo.movieapp.domain.repository.MovieRepository
 import kotlinx.coroutines.flow.Flow
 
 class MovieRepositoryImpl(val client : Client, val dao : MovieDAO) : MovieRepository {
-    override suspend fun fetchPopularMovie(): MovieResponse {
-        return client.TmdbAPI.getPopularMovie()
-    }
+    override suspend fun fetchPopularMovie() = client.TmdbAPI.getPopularMovie()
 
-    override suspend fun fetchTopRatedMovie(): MovieResponse {
-        return client.TmdbAPI.getTopRatedMovie()
-    }
+    override suspend fun fetchTopRatedMovie() = client.TmdbAPI.getTopRatedMovie()
 
-    override suspend fun fetchUpcomingMovie(): UpComingResponse {
-        return client.TmdbAPI.getUpcomingMovie()
-    }
+    override suspend fun fetchUpcomingMovie() = client.TmdbAPI.getUpcomingMovie()
 
-    override suspend fun fetchDetailMovie(id: String): DetailResponse {
-        return client.TmdbAPI.getDetailMovie()
-    }
+    override suspend fun fetchDetailMovie(id: String) = client.TmdbAPI.getDetailMovie()
 
-    override fun queryMovies(): Flow<List<Movie>> {
-        return dao.getMovie()
-    }
+    override fun queryMovies(): Flow<List<Movie>> = dao.getMovies()
 
-    override suspend fun queryMovie(movie: Movie): Flow<Movie> {
-        return dao.getMovieById(movie.id)
-    }
+    override suspend fun queryMovie(movie: Movie) = dao.getMovieById(movie.id)
 
-    override suspend fun insertMovie(movie: Movie) {
-        return dao.InsertMovie(movie)
-    }
+    override suspend fun insertMovie(movie: Movie) = dao.InsertMovie(movie)
 
-    override suspend fun deleteMovie(movie: Movie) {
-        return dao.DeleteMovie(movie)
-    }
+    override suspend fun deleteMovie(movie: Movie)  = dao.DeleteMovie(movie)
+
+
 }

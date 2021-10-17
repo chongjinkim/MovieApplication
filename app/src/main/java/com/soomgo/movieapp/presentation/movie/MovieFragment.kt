@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.ConcatAdapter
 import com.soomgo.movieapp.R
 import com.soomgo.movieapp.common.KEY_DETAIL
@@ -16,12 +15,15 @@ import com.soomgo.movieapp.presentation.adapter.HeaderAdapter
 import com.soomgo.movieapp.presentation.adapter.HorizontalAdapter
 import com.soomgo.movieapp.presentation.adapter.MovieListAdapter
 import com.soomgo.movieapp.presentation.detail.DetailFragment
+import org.koin.android.compat.ViewModelCompat.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class MovieFragment : Fragment(){
 
     lateinit var binding : LayoutRecyclerviewBinding
 
-    val viewModel : MovieViewModel by viewModels()
+    private val viewModel by viewModel<MovieViewModel>()
 
     private val popularAdapter = MovieListAdapter()
 
@@ -34,7 +36,7 @@ class MovieFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? = LayoutRecyclerviewBinding.inflate(inflater, container, false).apply{
-        lifecycleOwner = this@MovieFragment
+        lifecycleOwner = viewLifecycleOwner
         binding = this
     }.root
 

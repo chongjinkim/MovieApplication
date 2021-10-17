@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.library.baseAdapters.BR
+import com.soomgo.movieapp.BR
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -12,12 +12,15 @@ import com.soomgo.movieapp.common.KEY_DETAIL
 import com.soomgo.movieapp.databinding.LayoutDetailFragmentBinding
 import com.soomgo.movieapp.domain.model.Movie
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
+
 
 class DetailFragment : Fragment(){
 
     lateinit var binding : LayoutDetailFragmentBinding
 
-    val viewModel : DetailViewModel by viewModels()
+    private val viewModel by viewModel<DetailViewModel>()
 
     lateinit var movie : Movie
 
@@ -27,7 +30,7 @@ class DetailFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? = LayoutDetailFragmentBinding.inflate(inflater, container, false).apply {
         binding = this
-        lifecycleOwner = this@DetailFragment
+        lifecycleOwner = viewLifecycleOwner
     }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

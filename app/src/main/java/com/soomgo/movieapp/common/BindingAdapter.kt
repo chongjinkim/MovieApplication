@@ -29,11 +29,12 @@ fun setRunningTime(view : TextView, time : Int){
     view.text = runningTime
 }
 
-//@BindingAdapter("android:setFavoriteMovie")
-//fun setFavoriteMovie(view : ImageView, isFavorite : Boolean){
-//    view.setImageResource{
-//        when(isFavorite){
-//            true ->
-//        }
-//    }
-//}
+@BindingAdapter("android:setFavoriteMovie")
+fun setFavoriteMovie(view : ImageView, isFavorite : Boolean){
+    view.setImageResource(
+        when(isFavorite){
+            true -> android.R.drawable.star_on
+            false -> android.R.drawable.star_off
+        }
+    )
+}
