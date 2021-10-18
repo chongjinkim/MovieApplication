@@ -6,7 +6,7 @@ import com.soomgo.movieapp.domain.model.Movie
 
 @Database(
     entities = [Movie::class],
-    version = 1
+    version = 2
 )
 
 abstract class MovieDatabase : RoomDatabase() {
