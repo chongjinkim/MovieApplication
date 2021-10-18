@@ -17,7 +17,6 @@ class DetailViewModel(private val detailMovieUseCase: DetailMovieUseCase,
                       val deleteMovieUseCase : DetailMovieUseCase,
                       val queryFavoritesUseCase: QueryFavoritesUseCase ) :  ViewModel(){
 
-
     private val _movieDetail = MutableLiveData<MovieDetail>()
     val movieDetail : LiveData<MovieDetail>
         get() = _movieDetail

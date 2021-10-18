@@ -12,7 +12,6 @@ class Client(private val gSon : Gson)  {
     val client : Retrofit = createClient()
     val TmdbAPI : tmdbAPI = createClient(USER_BASE_URL).create(tmdbAPI::class.java)
 
-
     private val httpLogLevel
         get() = if(BuildConfig.DEBUG) HttpCustomLoggingInterceptor.Level.BODY else HttpCustomLoggingInterceptor.Level.NONE
 

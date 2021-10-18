@@ -13,7 +13,6 @@ interface tmdbAPI {
     @GET("/3/movie/top_rated")
     suspend fun getTopRatedMovie() : MovieResponse
 
-
     @GET("/3/movie/upcoming")
     suspend fun getUpcomingMovie() : UpComingResponse
 
