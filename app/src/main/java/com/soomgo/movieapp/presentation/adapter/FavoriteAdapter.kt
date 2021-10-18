@@ -8,18 +8,15 @@ import com.soomgo.movieapp.BR
 import com.soomgo.movieapp.databinding.ItemFavoriteBinding
 import com.soomgo.movieapp.domain.model.Movie
 
-
-
 //onCreateViewHold시 inflate 까먹지 말 것
 class FavoriteAdapter : ListAdapter<Movie, FavoriteAdapter.FavoriteViewHolder>(Movie.DiffUtil) {
 
     var clickListener : ((Movie) -> (Unit))? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteViewHolder {
-        val view = ItemFavoriteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = FavoriteViewHolder(
+        ItemFavoriteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+    )
 
-        return FavoriteViewHolder(view)
-    }
 
     override fun onBindViewHolder(holder: FavoriteViewHolder, position: Int) {
             holder.binding.apply {
