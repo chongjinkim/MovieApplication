@@ -16,7 +16,7 @@ class MovieRepositoryImpl(val client : Client, val dao : MovieDAO) : MovieReposi
 
     override suspend fun fetchUpcomingMovie() = client.TmdbAPI.getUpcomingMovie()
 
-    override suspend fun fetchDetailMovie(id: String) = client.TmdbAPI.getDetailMovie()
+    override suspend fun fetchDetailMovie(id: String) = client.TmdbAPI.getDetailMovie(id)
 
     override fun queryMovies(): Flow<List<Movie>> = dao.getMovies()
 

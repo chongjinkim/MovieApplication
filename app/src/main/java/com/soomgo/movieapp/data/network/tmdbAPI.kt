@@ -4,6 +4,7 @@ import com.soomgo.movieapp.data.dto.DetailResponse
 import com.soomgo.movieapp.data.dto.MovieResponse
 import com.soomgo.movieapp.data.dto.UpComingResponse
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface tmdbAPI {
 
@@ -16,7 +17,9 @@ interface tmdbAPI {
     @GET("/3/movie/upcoming")
     suspend fun getUpcomingMovie() : UpComingResponse
 
-    @GET("/3/movie/{movie_id}")
-    suspend fun getDetailMovie() : DetailResponse
+    @GET("/3/movie/{id}")
+    suspend fun getDetailMovie(
+        @Path("id") id : String
+    ) : DetailResponse
 
 }

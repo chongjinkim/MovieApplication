@@ -1,8 +1,8 @@
 package com.soomgo.movieapp.data.network
 
 import com.google.gson.Gson
+import com.soomgo.movieapp.BuildConfig
 import okhttp3.OkHttpClient
-import org.koin.android.compat.BuildConfig
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
