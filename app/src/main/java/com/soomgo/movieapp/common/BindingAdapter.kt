@@ -29,6 +29,9 @@ fun setRunningTime(view : TextView, time : Int){
     view.text = runningTime
 }
 
+
+//좋아요 기능 추가 1. BindingAdapter 생성 뒤에 -> 분기 처리, startOn, startOff 지정
+//별표 표시 시에 FavoriteFragment로 가는 그림 우선 설정 할 것
 @BindingAdapter("android:setFavoriteMovie")
 fun setFavoriteMovie(view : ImageView, isFavorite : Boolean){
     view.setImageResource(

@@ -25,7 +25,8 @@ data class MovieDto(
     val title: String,
     val video: Boolean,
     val vote_average: Double,
-    val vote_count: Int
+    val vote_count: Int,
+    val is_favorite : Boolean
 ) : Parcelable
 
 
@@ -41,7 +42,8 @@ fun MovieDto.toMovie() = Movie(
     title = title,
     video = video,
     vote_average = vote_average,
-    vote_count = vote_count
+    vote_count = vote_count,
+
 )
 
 

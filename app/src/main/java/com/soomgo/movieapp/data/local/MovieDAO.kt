@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface MovieDAO {
 
+    //flow -> 순차적으로 값을 보내고 정상적으로 예외 및 완료가 되는 비동기 스트림
     @Query("SELECT * FROM Movie")
     fun getMovies() : Flow<List<Movie>>
 

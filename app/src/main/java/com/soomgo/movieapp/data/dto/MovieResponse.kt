@@ -43,7 +43,8 @@ data class DetailResponse(
     val title: String,
     val video: Boolean,
     val vote_average: Double,
-    val vote_count: Int
+    val vote_count: Int,
+    val is_favorite : Boolean
 )
 
 fun DetailResponse.toMovieDetail() : MovieDetail = MovieDetail(
@@ -71,7 +72,7 @@ fun DetailResponse.toMovieDetail() : MovieDetail = MovieDetail(
     title = title,
     video = video,
     vote_average = vote_average,
-    vote_count = vote_count
+    vote_count = vote_count,
 
 )
 

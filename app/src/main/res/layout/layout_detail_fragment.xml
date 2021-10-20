@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/detailImage"
             android:layout_margin="10dp"
-            android:text="title"
+            android:text="@{movieDetail.title}"
             app:layout_constraintStart_toStartOf="parent"
             android:textSize="20sp"
             android:textStyle="bold"/>

@@ -20,7 +20,7 @@ class MovieRepositoryImpl(val client : Client, val dao : MovieDAO) : MovieReposi
 
     override fun queryMovies(): Flow<List<Movie>> = dao.getMovies()
 
-    override suspend fun queryMovie(movie: Movie) = dao.getMovieById(movie.id)
+    override suspend fun queryMovie(movie: Movie) =  dao.getMovieById(movie.id)
 
     override suspend fun insertMovie(movie: Movie) = dao.InsertMovie(movie)
 

@@ -8,6 +8,7 @@ import com.soomgo.movieapp.domain.model.Movie
 import com.soomgo.movieapp.domain.model.MovieDetail
 import com.soomgo.movieapp.domain.usecase.DetailMovieUseCase
 import com.soomgo.movieapp.domain.usecase.InsertMovieUseCase
+import com.soomgo.movieapp.domain.usecase.QueryFavoriteUseCase
 import com.soomgo.movieapp.domain.usecase.QueryFavoritesUseCase
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -15,7 +16,8 @@ import kotlinx.coroutines.launch
 class DetailViewModel(private val detailMovieUseCase: DetailMovieUseCase,
                       val insertMovieUseCase: InsertMovieUseCase,
                       val deleteMovieUseCase : DetailMovieUseCase,
-                      val queryFavoritesUseCase: QueryFavoritesUseCase ) :  ViewModel(){
+                      val queryFavoriteUseCase: QueryFavoriteUseCase
+) :  ViewModel(){
 
     private val _movieDetail = MutableLiveData<MovieDetail>()
     val movieDetail : LiveData<MovieDetail>
@@ -28,14 +30,17 @@ class DetailViewModel(private val detailMovieUseCase: DetailMovieUseCase,
     fun fetchDetail(movie : Movie){
         viewModelScope.launch {
 
-            launch {
-                queryFavoritesUseCase().collectLatest {
-                    _movieFavorite.value = true
-                }
-            }
+           launch {
+               queryFavoriteUseCase(movie).collectLatest {
+                   it?.let {
+                       _movieFavorite.value = true
+                   }
+               }
+           }
 
           detailMovieUseCase.invoke(movie).collectLatest { movieDetail ->
               movieDetail.data?.let {
+
                   _movieDetail.value = it
               }
           }

@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
-class MyViewModel(val queryFavoritesUseCase: QueryFavoritesUseCase) : ViewModel(){
+class MyViewModel(val queryMovieUseCase : QueryFavoritesUseCase) : ViewModel(){
 
     init {
         viewModelScope.launch {
@@ -24,7 +24,7 @@ class MyViewModel(val queryFavoritesUseCase: QueryFavoritesUseCase) : ViewModel(
         get() = _list
 
     private suspend fun getMovies(){
-        queryFavoritesUseCase().onEach {
+        queryMovieUseCase().onEach {
             _list.value = it
         }.launchIn(viewModelScope)
     }

@@ -42,7 +42,7 @@ class DetailFragment : Fragment(){
     private fun initView(){
         arguments?.getParcelable<Movie>(KEY_DETAIL)?.let {
             movie = it
-            viewModel.fetchDetail(movie)
+            viewModel.fetchDetail(it)
         }
 
         binding.startImage.setOnClickListener {
