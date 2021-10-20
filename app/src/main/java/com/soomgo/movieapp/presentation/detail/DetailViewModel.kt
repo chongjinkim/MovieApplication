@@ -6,16 +6,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.soomgo.movieapp.domain.model.Movie
 import com.soomgo.movieapp.domain.model.MovieDetail
-import com.soomgo.movieapp.domain.usecase.DetailMovieUseCase
-import com.soomgo.movieapp.domain.usecase.InsertMovieUseCase
-import com.soomgo.movieapp.domain.usecase.QueryFavoriteUseCase
-import com.soomgo.movieapp.domain.usecase.QueryFavoritesUseCase
+import com.soomgo.movieapp.domain.usecase.*
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 class DetailViewModel(private val detailMovieUseCase: DetailMovieUseCase,
                       val insertMovieUseCase: InsertMovieUseCase,
-                      val deleteMovieUseCase : DetailMovieUseCase,
+                      val deleteMovieUseCase : DeleteMovieUseCase,
                       val queryFavoriteUseCase: QueryFavoriteUseCase
 ) :  ViewModel(){
 
