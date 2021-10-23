@@ -15,7 +15,6 @@ data class TVDetail(
     val next_episode_to_air: Any,
     val number_of_episodes: Int,
     val number_of_seasons: Int,
-    val origin_country: List<String>,
     val original_language: String,
     val original_name: String,
     val overview: String,

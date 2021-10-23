@@ -34,7 +34,6 @@ data class TVDto(
 fun TVDto.toTV() = TV(
     id = id,
     name = name,
-    origin_country = origin_country,
     original_language = original_language,
     original_name = original_name,
     overview = overview,

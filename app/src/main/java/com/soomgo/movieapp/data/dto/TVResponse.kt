@@ -53,7 +53,6 @@ fun TVDetailResponse.toTVDetail() = TVDetail(
     next_episode_to_air = next_episode_to_air,
     number_of_episodes = number_of_episodes,
     number_of_seasons = number_of_seasons,
-    origin_country = origin_country,
     original_language = original_language,
     original_name = original_name,
     overview = overview,

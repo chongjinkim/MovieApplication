@@ -4,6 +4,7 @@ import androidx.room.*
 import com.soomgo.movieapp.domain.model.TV
 import kotlinx.coroutines.flow.Flow
 
+@Dao
 interface TvDAO {
 
     @Query("SELECT * FROM TV")
