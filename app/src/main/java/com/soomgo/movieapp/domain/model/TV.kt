@@ -2,11 +2,14 @@ package com.soomgo.movieapp.domain.model
 
 import android.os.Parcelable
 import androidx.recyclerview.widget.DiffUtil
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
+@Entity
 @Parcelize
 data class TV(
-    val id: Int,
+    @PrimaryKey val id: Int,
     val name: String,
     val origin_country: List<String>,
     val original_language: String,
