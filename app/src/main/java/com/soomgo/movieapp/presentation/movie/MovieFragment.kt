@@ -15,7 +15,6 @@ import com.soomgo.movieapp.presentation.adapter.HeaderAdapter
 import com.soomgo.movieapp.presentation.adapter.HorizontalAdapter
 import com.soomgo.movieapp.presentation.adapter.MovieListAdapter
 import com.soomgo.movieapp.presentation.detail.DetailFragment
-import org.koin.android.compat.ViewModelCompat.viewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 

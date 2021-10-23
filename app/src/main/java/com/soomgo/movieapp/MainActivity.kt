@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import com.soomgo.movieapp.databinding.ActivityMainBinding
 import com.soomgo.movieapp.presentation.movie.MovieFragment
 import com.soomgo.movieapp.presentation.my.MyFragment
-import com.soomgo.movieapp.presentation.tv.TvFragment
+import com.soomgo.movieapp.tv.TvFragment
 
 
 class MainActivity : AppCompatActivity() {

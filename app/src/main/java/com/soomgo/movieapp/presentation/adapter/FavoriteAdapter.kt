@@ -8,6 +8,7 @@ import com.soomgo.movieapp.BR
 import com.soomgo.movieapp.databinding.ItemFavoriteBinding
 import com.soomgo.movieapp.domain.model.Movie
 
+
 //onCreateViewHold시 inflate 까먹지 말 것
 //FavoriteViewHoler 생성 -> 추후 recyclerview item으로 사용할 예정
 
