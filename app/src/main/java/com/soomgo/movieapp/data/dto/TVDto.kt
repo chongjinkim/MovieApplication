@@ -1,11 +1,11 @@
-package com.soomgo.movieapp.domain.model
+package com.soomgo.movieapp.data.dto
 
-import com.soomgo.movieapp.data.dto.TVGenre
-import com.soomgo.movieapp.data.dto.TVProductionCompany
-import com.soomgo.movieapp.data.dto.TVProductionCountry
-import com.soomgo.movieapp.data.dto.TVSpokenLanguage
+import android.os.Parcelable
+import com.soomgo.movieapp.domain.model.TV
+import kotlinx.android.parcel.Parcelize
 
-data class TVDetail(
+@Parcelize
+data class TVDto(
     val genres: List<TVGenre>,
     val id: Int,
     val in_production: Boolean,
@@ -29,4 +29,17 @@ data class TVDetail(
     val type: String,
     val vote_average: Double,
     val vote_count: Int
+) : Parcelable
+
+fun TVDto.toTV() = TV(
+    id = id,
+    name = name,
+    origin_country = origin_country,
+    original_language = original_language,
+    original_name = original_name,
+    overview = overview,
+    popularity = popularity,
+    poster_path = poster_path,
+    vote_average = vote_average,
+    vote_count = vote_count
 )
