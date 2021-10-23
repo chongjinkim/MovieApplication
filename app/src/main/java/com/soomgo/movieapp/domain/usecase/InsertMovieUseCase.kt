@@ -4,7 +4,7 @@ import com.soomgo.movieapp.domain.model.Movie
 import com.soomgo.movieapp.domain.repository.MovieRepository
 
 class InsertMovieUseCase(private val repository : MovieRepository) {
-
+//dao
     suspend operator fun invoke(movie : Movie){
         repository.insertMovie(movie)
     }

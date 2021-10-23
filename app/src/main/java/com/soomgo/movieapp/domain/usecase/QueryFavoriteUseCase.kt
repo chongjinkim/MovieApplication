@@ -6,7 +6,7 @@ import com.soomgo.movieapp.domain.repository.MovieRepository
 import kotlinx.coroutines.flow.Flow
 
 class QueryFavoriteUseCase(private val repository : MovieRepository) {
-
+//dao
     suspend operator fun invoke(movie : Movie) = repository.queryMovie(movie)
 
 }

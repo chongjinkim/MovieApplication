@@ -9,7 +9,10 @@ import com.soomgo.movieapp.domain.model.Movie
 import com.soomgo.movieapp.domain.repository.MovieRepository
 import kotlinx.coroutines.flow.Flow
 
+
 class MovieRepositoryImpl(val client : Client, val dao : MovieDAO) : MovieRepository {
+
+
     override suspend fun fetchPopularMovie() = client.TmdbAPI.getPopularMovie()
 
     override suspend fun fetchTopRatedMovie() = client.TmdbAPI.getTopRatedMovie()

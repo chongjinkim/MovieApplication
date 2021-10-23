@@ -24,6 +24,9 @@ data class Movie(
 
 ) : Parcelable {
 
+
+//DiifUtil -> RecyclerView 구현시에 , 두 객체가 같은 항목인지, 두 항목의 데이터가 같은지 여부를 판단하여, 갱신하여 준다.
+//DiffUtil -> RecyclerView 구현시에, 두 객체가 같은 항목인지 , 두 항목의 데이터가 같은지 여부 판단하여 갱신하여 준다.
     companion object{
 
        val DiffUtil = object : DiffUtil.ItemCallback<Movie>(){

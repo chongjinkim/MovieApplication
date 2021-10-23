@@ -8,6 +8,7 @@ import com.soomgo.movieapp.BR
 import com.soomgo.movieapp.databinding.LayoutItemMovieBinding
 import com.soomgo.movieapp.domain.model.Movie
 
+//MovieListAdapter >
 class MovieListAdapter : ListAdapter<Movie, MovieListAdapter.MovieListViewHolder>(Movie.DiffUtil){
 
     var clickListener: ((Movie) -> (Unit))? = null

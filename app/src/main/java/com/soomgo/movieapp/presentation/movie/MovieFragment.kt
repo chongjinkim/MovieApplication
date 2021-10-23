@@ -46,6 +46,7 @@ class MovieFragment : Fragment(){
         initRecyclerView()
     }
 
+    //observe를 통해 livedatav 데이터 업데이트 알림.
     private fun observe(){
         viewModel.popularMovies.observe(viewLifecycleOwner){
             popularAdapter.submitList(it)

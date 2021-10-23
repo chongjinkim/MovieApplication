@@ -6,7 +6,7 @@ import okhttp3.Response
 class AuthInterceptor : Interceptor {
 
 //세션 끊김 방지를 위한 AuthInterceptor를 만든 다음 bear token을 넣어서 세션 끊김 방지.
-
+//intercpet 재정의 진행
     override fun intercept(chain: Interceptor.Chain): Response {
 
         var request = chain.request().newBuilder()
