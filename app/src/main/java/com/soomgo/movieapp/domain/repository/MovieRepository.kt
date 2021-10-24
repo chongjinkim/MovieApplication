@@ -8,10 +8,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface MovieRepository {
 
-
-    //repository설정, room db와 model을 처리하기 위한 원천
-    //suspend -> suspend function 일시 중단이 가능한 함수, suspend function 코루틴 안에서만 호출이 가능하다.
-
     suspend fun fetchPopularMovie() : MovieResponse
     suspend fun fetchTopRatedMovie() : MovieResponse
     suspend fun fetchUpcomingMovie() : UpComingResponse

@@ -1,4 +1,4 @@
-package com.soomgo.movieapp.tv
+package com.soomgo.movieapp.presentation.tv
 
 import android.os.Bundle
 import android.view.LayoutInflater

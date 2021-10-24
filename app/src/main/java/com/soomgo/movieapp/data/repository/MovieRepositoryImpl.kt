@@ -1,5 +1,8 @@
 package com.soomgo.movieapp.data.repository
 
+import com.soomgo.movieapp.data.dto.DetailResponse
+import com.soomgo.movieapp.data.dto.MovieResponse
+import com.soomgo.movieapp.data.dto.UpComingResponse
 import com.soomgo.movieapp.data.local.MovieDAO
 import com.soomgo.movieapp.data.network.Client
 import com.soomgo.movieapp.domain.model.Movie

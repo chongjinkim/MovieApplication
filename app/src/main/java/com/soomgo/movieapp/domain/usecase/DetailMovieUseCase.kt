@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 
 class DetailMovieUseCase(private val repository : MovieRepository) {
-//flow -
+
     operator fun invoke(movie: Movie) : Flow<Resource<MovieDetail>> = flow {
 
         try {

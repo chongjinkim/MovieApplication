@@ -2,7 +2,6 @@ package com.soomgo.movieapp.data.local
 
 import androidx.room.*
 import com.soomgo.movieapp.domain.model.Movie
-import com.soomgo.movieapp.domain.model.TV
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -12,7 +11,7 @@ interface MovieDAO {
     //moive를 넣는다.
     //flow -> 코루틴 구현시 순차적으로 movie클래스를 내보내고 예외 또는 완료가 되는 비동기 스트림
     //flow -> 코루틴 구현시 순차적으로 movie클래스를 내보내고 예외 또는 완료가 되는 비동기 스트림
-    //delete, insert, update 라는 인터페이스의 상속을 받음
+
     //해당 쿼리는 모든 사용자를 조회하는 Room 에서의 Dao쿼리
     @Query("SELECT * FROM Movie")
     fun getMovies() : Flow<List<Movie>>
@@ -28,6 +27,4 @@ interface MovieDAO {
 
     @Update
     suspend fun UpdateMovie(movie : Movie)
-
-
 }

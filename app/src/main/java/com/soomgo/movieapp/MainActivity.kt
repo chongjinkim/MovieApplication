@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import com.soomgo.movieapp.databinding.ActivityMainBinding
 import com.soomgo.movieapp.presentation.movie.MovieFragment
 import com.soomgo.movieapp.presentation.my.MyFragment
-import com.soomgo.movieapp.tv.TvFragment
+import com.soomgo.movieapp.presentation.tv.TvFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnItemSelectedListener {
             val fragment = when(it.itemId){
                 R.id.movieTab -> MovieFragment()
-                R.id.tvTab -> TvFragment()
                 R.id.scrapTab -> MyFragment()
                 else -> throw IllegalArgumentException("not found menu item id")
             }

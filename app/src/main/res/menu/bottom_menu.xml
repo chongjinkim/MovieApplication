@@ -7,11 +7,6 @@
         android:title="MOVIE"
         />
 
-    <item
-        android:id="@+id/tvTab"
-        android:icon="@drawable/ic_baseline_tv_24"
-        android:title="TV"
-        />
 
     <item
         android:id="@+id/scrapTab"

@@ -15,6 +15,7 @@ import com.soomgo.movieapp.presentation.adapter.HeaderAdapter
 import com.soomgo.movieapp.presentation.adapter.HorizontalAdapter
 import com.soomgo.movieapp.presentation.adapter.MovieListAdapter
 import com.soomgo.movieapp.presentation.detail.DetailFragment
+import org.koin.android.compat.ViewModelCompat.viewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -45,7 +46,6 @@ class MovieFragment : Fragment(){
         initRecyclerView()
     }
 
-    //observe를 통해 livedatav 데이터 업데이트 알림.
     private fun observe(){
         viewModel.popularMovies.observe(viewLifecycleOwner){
             popularAdapter.submitList(it)

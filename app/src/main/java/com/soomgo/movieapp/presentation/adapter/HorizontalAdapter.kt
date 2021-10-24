@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.soomgo.movieapp.databinding.LayoutHorizontalRecyclerviewBinding
 
 
-//HorizontalAdapter 생성, MovieListAdapter 매개변수로 활용을 한다.
-
 
 class HorizontalAdapter(private val subAdapter : RecyclerView.Adapter<MovieListAdapter.MovieListViewHolder>) : RecyclerView.Adapter<HorizontalAdapter.HorizontalViewHolder>(){
 

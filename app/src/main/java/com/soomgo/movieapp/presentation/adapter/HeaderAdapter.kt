@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.soomgo.movieapp.databinding.LayoutMovieHeaderBinding
+import com.soomgo.movieapp.domain.model.Movie
 import com.soomgo.movieapp.presentation.adapter.HeaderAdapter.HeaderViewHolder
 
 

@@ -1,7 +1,5 @@
 package com.soomgo.movieapp.data.dto
 
-
-import Dates
 import com.soomgo.movieapp.domain.model.MovieDetail
 
 

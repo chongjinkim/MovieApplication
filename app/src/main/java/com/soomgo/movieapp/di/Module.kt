@@ -15,8 +15,6 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import kotlin.math.sign
 
-
-//koin으로 module 생성
 val utilModule = module {
     single { GsonBuilder().setPrettyPrinting().create() }
 
