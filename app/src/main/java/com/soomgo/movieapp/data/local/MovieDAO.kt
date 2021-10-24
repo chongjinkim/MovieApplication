@@ -2,6 +2,7 @@ package com.soomgo.movieapp.data.local
 
 import androidx.room.*
 import com.soomgo.movieapp.domain.model.Movie
+import com.soomgo.movieapp.domain.model.TV
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -27,4 +28,6 @@ interface MovieDAO {
 
     @Update
     suspend fun UpdateMovie(movie : Movie)
+
+
 }

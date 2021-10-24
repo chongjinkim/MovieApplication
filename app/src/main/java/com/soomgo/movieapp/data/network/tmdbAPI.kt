@@ -19,9 +19,7 @@ interface tmdbAPI {
     suspend fun getUpcomingMovie() : UpComingResponse
 
     @GET("/3/movie/{id}")
-    suspend fun getDetailMovie(
-        @Path("id") id : String
-    ) : DetailResponse
+    suspend fun getDetailMovie(@Path("id") id : String) : DetailResponse
 
     @GET("/3/tv/popular")
     suspend fun getPopularTv() : TVResponse

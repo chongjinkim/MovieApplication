@@ -17,7 +17,7 @@ data class TVOnTheAirResponse(
 )
 
 data class TVDetailResponse(
-    val genres: List<TVGenre>,
+    val genres: List<Genre>,
     val id: Int,
     val in_production: Boolean,
     val languages: List<String>,
@@ -32,9 +32,9 @@ data class TVDetailResponse(
     val overview: String,
     val popularity: Double,
     val poster_path: String,
-    val production_companies: List<TVProductionCompany>,
-    val production_countries: List<TVProductionCountry>,
-    val spoken_languages: List<TVSpokenLanguage>,
+    val production_companies: List<ProductionCompany>,
+    val production_countries: List<ProductionCountry>,
+    val spoken_languages: List<SpokenLanguage>,
     val status: String,
     val tagline: String,
     val type: String,
